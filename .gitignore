@@ -1,0 +1,19 @@
+# ignore all checkpoint files
+*checkpoint.py
+*checkpoint.ipynb
+*/*checkpoint.ipynb
+*/*/*checkpoint.ipynb
+*/*/.ipynb_checkpoints/*
+
+#ignore pictures
+*.png
+*/*.png
+*/*/*.png
+*.jpeg
+
+#ignore this guy too
+.DS_Store
+*/.DS_Store
+
+# ignore cached files
+*.pyc
