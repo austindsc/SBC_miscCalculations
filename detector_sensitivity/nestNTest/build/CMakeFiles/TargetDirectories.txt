@@ -1,0 +1,3 @@
+/Users/austindestcroix/Desktop/school_holders/projects/sbc/calculations/detector_sensitivity/nestNTest/build/CMakeFiles/test.dir
+/Users/austindestcroix/Desktop/school_holders/projects/sbc/calculations/detector_sensitivity/nestNTest/build/CMakeFiles/edit_cache.dir
+/Users/austindestcroix/Desktop/school_holders/projects/sbc/calculations/detector_sensitivity/nestNTest/build/CMakeFiles/rebuild_cache.dir

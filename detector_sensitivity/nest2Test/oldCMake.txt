@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+set (CMAKE_CXX_STANDARD 11)
+
+project(ATOWN_NEST_TEST VERSION 1.0 LANGUAGES CXX)
+
+set(gcem_DIR "/Users/austindestcroix/packages/nestNinstall/lib/cmake/gcem/")
+# message("gcem_DIR:    " ${gcem_DIR})
+
+set(NEST_DIR "/Users/austindestcroix/packages/nestNinstall/lib/cmake/NEST/")
+find_package(NEST REQUIRED)
+set(MY_NEST_INCLUDE "/Users/austindestcroix/packages/nestNinstall/include/Detectors/")
+set(MY_NEST_INCLUDE2 "/Users/austindestcroix/packages/nestNinstall/include/gcem_incl/")
+set(MY_NEST_INCLUDE3 "/Users/austindestcroix/packages/nestNinstall/include/NEST/")
+
+# include_directories(${NEST_INCLUDE_DIRS})
+include_directories(${MY_NEST_INCLUDE})
+include_directories(${MY_NEST_INCLUDE2})
+include_directories(${MY_NEST_INCLUDE3})
+# message("NEST_INCLUDE_DIRS:    " ${NEST_INCLUDE_DIRS})
+
+# add_executable(MyApp MyApp.cc)
+# target_link_libraries(MyApp NEST)
+
+# include(GNUInstallDirs)
+# include(CMakePackageConfigHelpers)
+# include(/User/austindestcroix/packages/cmake/gcem.cmake)
+# 
+add_executable(test main1.cpp)
+target_link_libraries(test PUBLIC NESTCore gcem)
+# target_link_libraries(test PUBLIC gcem)
+# 
+# target_compile_features(test PUBLIC cxx_std_17)
