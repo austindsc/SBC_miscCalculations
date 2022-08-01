@@ -4,33 +4,30 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 project(ATOWN_NEST_TEST VERSION 1.0 LANGUAGES CXX)
 
-# set(gcem_DIR "/Users/austindestcroix/packages/nest2install/lib/cmake/gcem/")
+## getting GCEM (NEST doesn't load it itself?)
+set(gcem_DIR $ENV{NESTNEW_INSTALL}/lib/cmake/gcem/)
 # message("gcem_DIR:    " ${gcem_DIR})
-
-set(gcem_DIR "/Users/austindestcroix/packages/nestNinstall/lib/cmake/gcem/")
 find_package(gcem REQUIRED)
-# message("gcem_DIR:    " ${gcem_DIR})
 
 # trying to find nestcore 
-list(APPEND CMAKE_PREFIX_PATH "/Users/austindestcroix/packages/nestNinstall/lib/")
-find_library(NCPATH NESTCore HINTS "/Users/austindestcroix/packages/nestNinstall/lib/")
+list(APPEND CMAKE_PREFIX_PATH $ENV{NESTNEW_INSTALL}/lib/)
+find_library(ncpath NESTCore HINTS $ENV{NESTNEW_INSTALL}/lib/)
 
-set(NEST_DIR "/Users/austindestcroix/packages/nestNinstall/lib/")
+set(NEST_DIR $ENV{NESTNEW_INSTALL}/lib/)
 find_package(NEST REQUIRED)
 
-set(MY_NEST_INCLUDE "/Users/austindestcroix/packages/nestNinstall/include/")
-set(MY_NEST_INCLUDE1 "/Users/austindestcroix/packages/nestNinstall/include/NEST")
-set(MY_NEST_INCLUDE2 "/Users/austindestcroix/packages/nestNinstall/include/Detectors")
-set(MY_NEST_INCLUDE3 "/Users/austindestcroix/packages/nestNinstall/include/gcem_incl")
+# some of these are probably unecessary but oh well
+set(MY_NEST_INCLUDE $ENV{NESTNEW_INSTALL}/include/)
+set(MY_NEST_INCLUDE1 $ENV{NESTNEW_INSTALL}/include/NEST)
+set(MY_NEST_INCLUDE2 $ENV{NESTNEW_INSTALL}/include/Detectors)
+set(MY_NEST_INCLUDE3 $ENV{NESTNEW_INSTALL}/include/gcem_incl)
 include_directories(${MY_NEST_INCLUDE})
 include_directories(${MY_NEST_INCLUDE1})
 include_directories(${MY_NEST_INCLUDE2})
 include_directories(${MY_NEST_INCLUDE3})
-# include_directories(${NEST_INCLUDE_DIRS})
-# message("NEST_INCLUDE_DIRS:    " ${NEST_INCLUDE_DIRS})
 
 find_package(ROOT REQUIRED)
 include_directories(${ROOT_INCLUDE_DIRS})
 
 add_executable(test main1.cpp)
-target_link_libraries(test PUBLIC ${NCPATH} gcem ${ROOT_LIBRARIES})
+target_link_libraries(test PUBLIC ${ncpath} gcem ${ROOT_LIBRARIES})
