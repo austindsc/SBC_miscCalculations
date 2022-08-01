@@ -29,5 +29,9 @@ include_directories(${MY_NEST_INCLUDE3})
 find_package(ROOT REQUIRED)
 include_directories(${ROOT_INCLUDE_DIRS})
 
+#define source file variable 'SOURCES'
+file(GLOB SOURCES   ${PROJECT_SOURCE_DIR}/*.cc
+                    )
+
 add_executable(sbctt sbctt.cpp)
 target_link_libraries(sbctt PUBLIC ${ncpath} gcem ${ROOT_LIBRARIES})

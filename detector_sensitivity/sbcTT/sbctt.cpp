@@ -9,27 +9,18 @@
 #include "LArDetector.hh"
 #include "LArNEST.hh"
 
+// helpful code, functions and constants
+#include "helpers.cc"
+
 using namespace std;
 // using namespace NEST;
 
-extern const float hc = 1239.8;
+// Right now ignoring fluctuations and photon quantization
 
-// right now ignore fluctuations and photon quantization
-
-// get energy lost to photons
-double GetELost(float npe, float wl = 128.){
-  float ep = hc/wl;
-  return npe*ep;
-}
 
 int main(){
   
-  cout << "heello austin!" << endl;
-  
-  // VDetector* det = new VDetector();
-  // 
-  // NESTcalc nc(det);
-  
+  cout << "hello austin!" << endl;
   
   double density = 1.4;
   double Efield = 0.001;
@@ -43,17 +34,12 @@ int main(){
   double highE = 1000;
   double estep = 0.5;
   int numSteps = (highE - lowE)/estep;
-  vector<double> energy_vals;
-  
-  for(int i = 0; i < numSteps; i++){
-    energy_vals.emplace_back(lowE + estep*i);
-  }
+  vector<double> energy_vals = MCH::MakeVector_linear(lowE, highE, estep);
   
   // std::vector<NEST::LArInteraction> particle_types = {
   //     NEST::LArInteraction::NR, NEST::LArInteraction::ER, NEST::LArInteraction::Alpha
   // };
   // 
-  
   
   LArDetector* detector = new LArDetector();
   // Construct NEST class using detector object
