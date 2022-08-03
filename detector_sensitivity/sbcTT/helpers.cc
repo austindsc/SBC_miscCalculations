@@ -4,15 +4,24 @@ using namespace std;
 
 //// Constants and Numberrs ////
 extern const float hc = 1239.8;
+extern const float kev = 1000.;
 
-extern const wlAr = 128.0;
-extern const wlXe = 176.0;
+extern const float wlAr = 128.0;
+extern const float wlXe = 176.0;
 
-// get energy lost to photons
-double GetELost(float npe, float wl = wlAr){
+// get energy lost to photons, in eV
+double GetELost_Light(float npe, float wl = wlAr){
   float ep = hc/wl;
-  return npe*ep;
+  return npe*ep/kev;
 }
+
+// // get energy lost to photons
+// double GetELost_Light(NEST::LArNESTResult yield, float wl = wlAr){
+//   float npe = yield.yields.Nph;
+//   float ep = hc/wl;
+//   return npe*ep;
+// }
+
 
 // My Code Helper
 namespace MCH{

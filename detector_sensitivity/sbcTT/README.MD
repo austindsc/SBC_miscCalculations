@@ -33,6 +33,20 @@ What about heat from escaping charges? Electrons loose energy as they thermalize
 
 What is estimate of electron thermalization energy?
 Eqh = ??
+K = 
+Ephoton = NP * hc/wl
+Echarge = NQ * Ebandgap
+Heat = trueHeat + Eqh
+
+Eqh ~ Nq * (Average electronic energy given - bandgap)
+Eqh ~ Nq * (Wvalue - bandgap)
+
+what about: this is something else. Eheat in scintillation process?
+check my heat from RCX 1
+Eqh ~ Nq * (W - max Excitation energy)
+Eqh ~ Nq * (W - 178nm)
+^^ can do some correction for photons, and direct excitations
+^^ all ignoring possibility of IR light
 
 Three cases are outlined below:
 Case A: sparse burst model (SB)
