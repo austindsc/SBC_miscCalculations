@@ -32,6 +32,7 @@ include_directories(${ROOT_INCLUDE_DIRS})
 #define source file variable 'SOURCES'
 file(GLOB SOURCES   ${PROJECT_SOURCE_DIR}/*.cc
                     )
-
-add_executable(sbctt sbctt.cpp)
+                    
+add_executable(sbctt sbctt.cpp ${CMAKE_CXX_FLAGS})
+target_compile_features(sbctt PUBLIC cxx_std_20)
 target_link_libraries(sbctt PUBLIC ${ncpath} gcem ${ROOT_LIBRARIES})

@@ -1,11 +1,19 @@
 
 struct sbc_medium{
-  float wl;     // wavelength
-  float egap;   // bandgap
-  float Wval;   // w value
+  float wl;     // wavelength (nm)
+  float wleV;
+  float egap;   // bandgap (eV)
+  float wval;   // w value (eV)
+  float rho;    // density (g/cm3)
   
   float pdimer; // charged dimer energy (see kubota paper and others)
   float excimer;// excimer energy
+  
+  sbc_medium(){}
+  sbc_medium(float wl, float eg, float w, float rho) :
+    wl{wl}, egap{eg}, wval{w}, rho{rho}{
+      this->wleV = hc/wl;
+    }
 };
 
 struct sbc_seitz{
@@ -15,6 +23,8 @@ struct sbc_seitz{
   
   float T;
   float P;
+  sbc_seitz(){}
+  // sbc_seitz(
 };
 
 struct ArEvent{

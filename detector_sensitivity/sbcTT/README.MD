@@ -48,6 +48,8 @@ Eqh ~ Nq * (W - 178nm)
 ^^ can do some correction for photons, and direct excitations
 ^^ all ignoring possibility of IR light
 
+should scale by LET to represent it more like 'bubble nucleation'
+
 Three cases are outlined below:
 Case A: sparse burst model (SB)
 charges leaves the Rc promptly. No E loss within Rc
