@@ -1,3 +1,26 @@
+
+heat_total = K - EnergyAsPhotons - EnergyAsCharge
+
+Ar^+ + Ar --> Ar2^+
+
+EnergyAsCharge = Nq * Egap + Nion*chargeDimerEnergy
+
+15.6eV in
+14.6eV to e- in bandgap
+1eV belongs to Ar+ in high energy state
+
+heat_total = K - NPE * 1240/178nm - Nq * Egap
+
+Heat within Rc <= heat_total
+
+
+
+
+Ar2
+
+
+
+
 sbcTT: Scintillating Bubble Chamber Threshold Transformation
 or SBC True Threshold
 
@@ -44,7 +67,7 @@ Eqh ~ Nq * (Wvalue - bandgap)
 what about: this is something else. Eheat in scintillation process?
 check my heat from RCX 1
 Eqh ~ Nq * (W - max Excitation energy)
-Eqh ~ Nq * (W - 178nm)
+Eqh ~ Nq * (W - 1240 eVnm/178nm)
 ^^ can do some correction for photons, and direct excitations
 ^^ all ignoring possibility of IR light
 
@@ -53,11 +76,12 @@ should scale by LET to represent it more like 'bubble nucleation'
 Three cases are outlined below:
 Case A: sparse burst model (SB)
 charges leaves the Rc promptly. No E loss within Rc
-Heat = K - light - charge
+Muons are more A-like
 
 Case B: strong coupling model (SC)
 charges thermalize quickly within Rc. All electron thermalizing energy 
 available is lost within Rc
+Alphas are B-like
 
 Case C: quasi-real model (QR)
 somewhere between A and B

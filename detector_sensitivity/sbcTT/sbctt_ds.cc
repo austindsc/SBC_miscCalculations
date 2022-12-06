@@ -7,6 +7,7 @@ struct sbc_medium{
   float rho;    // density (g/cm3)
   
   float pdimer; // charged dimer energy (see kubota paper and others)
+  float ionInLiquid;
   float excimer;// excimer energy
   
   sbc_medium(){}
